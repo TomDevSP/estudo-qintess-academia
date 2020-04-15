@@ -3,17 +3,18 @@ package com.qintess.eventoapp.models;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotEmpty;
+
 
 
 @Entity
 public class Convidado {
 	
 	@Id
-	@NotNull
+	@NotEmpty
 	private String rg;
 	
-	@NotNull
+	@NotEmpty
 	private String nomeConvidado;
 	
 	@ManyToOne
