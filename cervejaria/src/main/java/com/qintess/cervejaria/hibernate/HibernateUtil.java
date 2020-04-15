@@ -32,7 +32,7 @@ public class HibernateUtil {
 				Properties prop = new Properties();
 				
 				prop.put(Environment.DRIVER, "org.postgresql.Driver");
-				prop.put(Environment.URL, "jdbc:postgresql:localhost/cervejaria");
+				prop.put(Environment.URL, "jdbc:postgresql://localhost:5432/cervejaria");
 				prop.put(Environment.USER, "postgres");
 				prop.put(Environment.PASS, "1234");
 				
