@@ -1,11 +1,13 @@
 package com.qintess.eventoapp.models;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Evento implements Serializable{
@@ -21,7 +23,8 @@ public class Evento implements Serializable{
 	private String data;
 	private String horario;
 	
-	
+	@OneToMany
+	private List<Convidado> convidados;
 	
 	public Long getCodigo() {
 		return codigo;
