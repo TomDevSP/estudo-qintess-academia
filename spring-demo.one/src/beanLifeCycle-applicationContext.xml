@@ -5,11 +5,7 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context
-    http://www.springframework.org/schema/context/spring-context.xsd">
-    
-    <!-- carregar o arquivo de properties -->
-    <context:property-placeholder location="classpath:sport.properties"/>
-    
+    http://www.springframework.org/schema/context/spring-context.xsd">    
     
     <!-- Define your beans here -->
     
@@ -18,22 +14,14 @@
     </bean>
     
     
-    <bean id="myCoach" class="com.qintess.springdemo.TrackCoach">
+    <bean id="myCoach" 
+    	class="com.qintess.springdemo.TrackCoach" 
+    	init-method="doMyStartupStuff" 
+    	destroy-method="doMyCleanupStuff">
     
     
     	<!-- configurar injeção de construtor -->
     	<constructor-arg ref="myFortuneService"></constructor-arg>
-    </bean>
-    
-    <bean id="myCricketCoach" class="com.qintess.springdemo.CricketCoach">
-    	
-    	<!-- configurar injeção do setter -->
-    	<property name="fortuneService" ref="myFortuneService"></property>
-    	
-    	<!-- injetar valores literais -->
-    	<property name="emailAdress" value="${foo.email}"></property>
-    	<property name="team" value="${foo.team}"></property>
-    
     </bean>
     
 </beans>

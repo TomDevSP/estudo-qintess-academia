@@ -4,6 +4,11 @@ public class CricketCoach implements Coach {
 	
 	private FortuneService fortuneService;
 	
+	// adc novos campos para emailAdress e team
+	private String emailAdress;
+	private String team;
+
+	
 	// criar um constructor no-arg
 	public CricketCoach() {
 		System.out.println("CricketCoach: dentro do constructor no-arg");
@@ -25,6 +30,28 @@ public class CricketCoach implements Coach {
 	@Override
 	public String getDailyFortune() {
 		return fortuneService.getFortune();
+	}
+	
+	
+	public String getEmailAdress() {
+		return emailAdress;
+	}
+
+
+	public void setEmailAdress(String emailAdress) {
+		System.out.println("CricketCoach: dentro do método setter - setEmailAdress");
+		this.emailAdress = emailAdress;
+	}
+
+
+	public String getTeam() {
+		return team;
+	}
+
+
+	public void setTeam(String team) {
+		System.out.println("CricketCoach: dentro do método setter - setTeam");
+		this.team = team;
 	}
 
 }
