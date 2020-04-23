@@ -1,16 +1,18 @@
 package com.qintess.hibernate.demo.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="student")
-public class Student {
-	
+@Table(name="instructor")
+public class Instructor {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,19 +27,12 @@ public class Student {
 	
 	@Column(name="email")
 	private String email;
-
 	
-	public Student() {
-		
-	}
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="instructor_detail_id")
+	private int instructorDetailID;
 	
-	public Student(String firstName, String lastName, String email) {
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.email = email;
-	}
-
-
+	
 	public int getId() {
 		return id;
 	}
@@ -70,9 +65,24 @@ public class Student {
 		this.email = email;
 	}
 
+	public int getInstructorDetailID() {
+		return instructorDetailID;
+	}
+
+	public void setInstructorDetailID(int instructorDetailID) {
+		this.instructorDetailID = instructorDetailID;
+	}
+
+	public Instructor(String firstName, String lastName, String email) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+	}
+
 	@Override
 	public String toString() {
-		return "Student [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + "]";
-	}
+		return "Instructor [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
+				+ ", instructorDetailID=" + instructorDetailID + "]";
+	}	
 	
 }
