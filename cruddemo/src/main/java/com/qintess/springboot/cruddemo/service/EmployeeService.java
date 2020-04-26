@@ -1,10 +1,10 @@
-package com.qintess.springboot.cruddemo.dao;
+package com.qintess.springboot.cruddemo.service;
 
 import java.util.List;
 
 import com.qintess.springboot.cruddemo.entity.Employee;
 
-public interface EmployeeDAO {
+public interface EmployeeService {
 	
 	public List<Employee> findAll();
 	
