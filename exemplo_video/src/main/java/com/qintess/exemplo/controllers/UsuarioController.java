@@ -1,6 +1,5 @@
 package com.qintess.exemplo.controllers;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +13,7 @@ import com.qintess.exemplo.dados.UsuarioRepo;
 import com.qintess.exemplo.entidades.Usuario;
 
 @RestController
-@RequestMapping("/api/")
+@RequestMapping("/api")
 public class UsuarioController {
 	
 	@Autowired
@@ -22,10 +21,7 @@ public class UsuarioController {
 	
 	@GetMapping("/usuario")
 	public List<Usuario> getUsuarios(){
-		List<Usuario> usuarios = new ArrayList<Usuario>();
-		usuarios.add(new Usuario());
-		usuarios.add(new Usuario());
-		return usuarios;
+		return repo.findAll();
 	}
 	
 	@PostMapping("/usuario")
