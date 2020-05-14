@@ -1,13 +1,13 @@
-package com.qintess.evento;
+package com.qintess.crud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SolomonApplication {
+public class CrudRealTimeApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SolomonApplication.class, args);
+		SpringApplication.run(CrudRealTimeApplication.class, args);
 	}
 
 }
